@@ -1,3 +1,101 @@
-<h1>
-Hello World
-</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>California House Price Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+  
+    h1 {
+      text-align: center;
+    }
+  
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  
+    .form-group {
+      margin-bottom: 20px;
+    }
+  
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+  
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  
+    #prediction-result {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>California House Price Prediction</h1>
+  <form id="prediction-form" method="POST" action="/predict">
+    <div class="form-group">
+      <label for="medinc">MedInc:</label>
+      <input type="text" id="medinc" name="medinc" required>
+    </div>
+    <div class="form-group">
+      <label for="houseage">HouseAge:</label>
+      <input type="text" id="houseage" name="houseage" required>
+    </div>
+    <div class="form-group">
+      <label for="averooms">AveRooms:</label>
+      <input type="text" id="averooms" name="averooms" required>
+    </div>
+    <div class="form-group">
+      <label for="avebedrms">AveBedrms:</label>
+      <input type="text" id="avebedrms" name="avebedrms" required>
+    </div>
+    <div class="form-group">
+      <label for="population">Population:</label>
+      <input type="text" id="population" name="population" required>
+    </div>
+    <div class="form-group">
+      <label for="aveoccup">AveOccup:</label>
+      <input type="text" id="aveoccup" name="aveoccup" required>
+    </div>
+    <div class="form-group">
+      <label for="latitude">Latitude:</label>
+      <input type="text" id="latitude" name="latitude" required>
+    </div>
+    <div class="form-group">
+      <label for="longitude">Longitude:</label>
+      <input type="text" id="longitude" name="longitude" required>
+    </div>
+    <button type="submit">Predict</button>
+  </form>
+  <div id="prediction-result">
+    {% if prediction_text %}
+       {{ prediction_text }}
+    {% endif %}
+  </div>
+
+  <script>
+    
+  </script>
+</body>
+</html>
